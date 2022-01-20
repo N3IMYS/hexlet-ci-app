@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: setup-node@v2
+        with: 
+          node-version: '16'
+
+      - name: build a project
+        run: make setup
+      
+      - name: run tests
+        run: make test
+      
+      - name: lint
+        run: nake lint
+
+      
