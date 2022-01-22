@@ -29,9 +29,9 @@ jobs:
         run: make lint
 
   snykCheck: 
-
-    runs-on: ubuntu-latest
-    steps:
+    security:
+      runs-on: ubuntu-latest
+      steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
