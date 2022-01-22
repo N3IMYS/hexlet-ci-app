@@ -28,7 +28,7 @@ jobs:
       - name: lint
         run: make lint
 
-  snyk check: 
+  snykCheck: 
 
     runs-on: ubuntu-latest
     steps:
